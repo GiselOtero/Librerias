@@ -10,13 +10,14 @@ use Faker\Factory;
 
 
 $faker = Factory::create('es_AR'); /* permite configurar el idioma para que los datos generados (como nombres, direcciones, textos, etc.) */
-$dni = $faker->numerify('########');
-$nombre = $faker->firstname();
-$apellido = $faker->lastName();
-$email = $faker->email();
-$fechaNac = $faker->date('Y-m-d');
-$telefono = '+54 9 299 ' . $faker->numerify('####-###');
-$domicilio =  $faker->address();
+$dni = $faker->numerify('########');/* Genera un número de DNI ficticio con 8 dígitos */
+$nombre = $faker->firstname(); /* Genera un nombre de pila aleatorio  */
+$apellido = $faker->lastName();/* Genera un apellido aleatorio */
+$email = $faker->email(); /* Genera un correo ficticio */
+$fechaNac = $faker->date('Y-m-d'); /* Genera una fecha de nacimiento aleatoria con formato Año-Mes-Día */
+$telefono = '+54 9 299 ' . $faker->numerify('####-###'); /* Genera un número de teléfono argentino con formato personalizado */
+$domicilio = $faker->streetName . ' ' . $faker->buildingNumber . ', ' . $faker->city . ', ' . $faker->state . ' ' . $faker->postcode; /* Genera una dirección completa  combinando calle, número, ciudad, provincia y código postal */
+
 
 ?>
 <div class="container mt-2">
@@ -89,7 +90,6 @@ $domicilio =  $faker->address();
                 <div class="mt-4">
                     <input class="btn btn-primary" type="submit" value="Enviar">
                     <input class="btn btn-danger" type="reset" value="Cancelar">
-                    <a class="btn btn-secondary" type="btn" href="index.php">Menu</a>
                 </div>
             </form>
         </div>

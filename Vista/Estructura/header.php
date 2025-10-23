@@ -37,7 +37,7 @@ include_once "../../vendor/autoload.php"; /* faker */
             <a class="nav-link" href="../faker/formPersona.php"> Nueva Persona Faker</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#listado">Listado de Personas</a>
+            <a class="nav-link" href="../formPersona/listadoPersonas.php">Listado de Personas</a>
           </li>
         </ul>
       </div>
