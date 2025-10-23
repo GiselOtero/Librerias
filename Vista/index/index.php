@@ -1,11 +1,17 @@
 <?php
 include_once "../Estructura/header.php";
+
+$datos = data_submitted();
+
+
+
+
 ?>
 
 
 <div class="text-center mb-4">
     <h1 class="display-4">Librerías PHP</h1>
-    <p class="lead">Presentación del grupo</p>
+    <p class="lead">Presentación </p>
 </div>
 
 <div class="card mb-4">
@@ -37,12 +43,27 @@ echo $faker->name;</code></pre>
             <div class="card-header bg-warning text-dark">Google reCAPTCHA</div>
             <div class="card-body">
                 <p><strong>¿Qué es?</strong> Un sistema de verificación para evitar bots en formularios.</p>
+                <div>
+                    <?php
+                    if (isset($datos["mensaje"]) && isset($datos["estado"])) {
+                        if ($datos["estado"] == 1) {
+                            echo "<div class='alert alert-success' role='alert'>" . $datos["mensaje"] . "</div>";
+                        } else if ($datos["estado"] == 0) {
+
+                            echo "<div class='alert alert-danger' role='alert'>" . $datos["mensaje"] . "</div>";
+                        }
+                    }
+                    ?>
+                </div>
                 <form action="procesar.php" method="POST">
                     <div class="mb-3">
                         <label for="email" class="form-label">Correo electrónico</label>
                         <input type="email" class="form-control" id="email" name="email" required>
                     </div>
-                     <div class="g-recaptcha" data-sitekey="6LdwU_ArAAAAADil7cn9fZwTFWXAvnx0TZNhvAny"></div>
+                    <!-- Componente de Google reCAPTCHA v2 -->
+                    <!-- Este bloque genera el desafío visual para verificar que el usuario no sea un bot -->
+                    <!-- El atributo data-sitekey contiene tu clave pública proporcionada por Google -->
+                    <div class="g-recaptcha" data-sitekey="6LdwU_ArAAAAADil7cn9fZwTFWXAvnx0TZNhvAny"></div>
                     <button type="submit" class="btn btn-primary mt-3">Enviar</button>
                 </form>
             </div>
