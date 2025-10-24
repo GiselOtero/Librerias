@@ -32,6 +32,7 @@ $datos = data_submitted();
             <div class="card-header bg-success text-white">FakerPHP</div>
             <div class="card-body">
                 <p><strong>¿Qué es?</strong> Una librería para generar datos falsos (nombres, direcciones, correos, etc.) útil para pruebas.</p>
+                <p><strong>Pagina Oficial: </strong><a class="link-offset-2 link-underline link-underline-opacity-25" href="https://fakerphp.org/">FakerPHP</a></p>
                 <pre><code>$faker = Faker\Factory::create();
 echo $faker->name;</code></pre>
             </div>

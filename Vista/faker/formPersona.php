@@ -6,10 +6,26 @@ $accion = "nuevo";
 
 
 use Faker\Factory;
+/* 
+Importa la clase Factory del namespace Faker. 
+Esto permite usar solo "Factory" en lugar de "Faker\Factory" como por ejemplo 
+$faker = Faker\Factory::create();
+
+*/
 
 
+$faker = Factory::create('es_AR'); 
+/* 
+permite configurar el idioma para que los datos generados (como nombres, direcciones, textos, etc.) 
+mas Ejemplos de idiomas
+en_US	Inglés (Estados Unidos)	Factory::create('en_US')
+es_ES	Español (España)	Factory::create('es_ES')
+es_AR	Español (Argentina)	Factory::create('es_AR')
+fr_FR	Francés (Francia)	Factory::create('fr_FR')
+ja_JP	Japonés (Japón)	Factory::create('ja_JP')
+etc.
 
-$faker = Factory::create('es_AR'); /* permite configurar el idioma para que los datos generados (como nombres, direcciones, textos, etc.) */
+*/
 $dni = $faker->numerify('########');/* Genera un número de DNI ficticio con 8 dígitos */
 $nombre = $faker->firstname(); /* Genera un nombre de pila aleatorio  */
 $apellido = $faker->lastName();/* Genera un apellido aleatorio */

@@ -1,6 +1,10 @@
 <?php
 include_once "../../configuracion.php";
-include_once "../../vendor/autoload.php"; /* faker */
+include_once "../../vendor/autoload.php"; 
+/* Esta línea incluye el archivo autoload generado por Composer.
+ Composer es el gestor de dependencias de PHP, y este se encarga de cargar automáticamente todas las clases necesarias, incluyendo FakerPHP. 
+ */
+
 ?>
 
 <!DOCTYPE html>
